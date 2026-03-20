@@ -26,7 +26,266 @@ body {
 } */
 
 
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+ 
+
+
+/* =========================
+   ROOT DESIGN TOKENS
+========================= */
+:root {
+  /* Black */
+  --black: #000;
+  --black-100: #000319;
+  --black-200: rgba(17, 25, 40, 0.75);
+  --black-300: rgba(255, 255, 255, 0.125);
+
+  /* White */
+  --white: #ffffff;
+  --white-100: #bec1dd;
+  --white-200: #c1c2d3;
+
+  /* Blue */
+  --blue-100: #e4ecff;
+
+  /* Purple */
+  --purple: #cbacf9;
+
+  /* Theme (HSL based) */
+  --border: 240 5% 84%;
+  --input: 240 5% 84%;
+  --ring: 240 5% 65%;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
+
+  --primary: 240 5% 10%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 240 4% 95%;
+  --secondary-foreground: 240 5% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --muted: 240 4% 95%;
+  --muted-foreground: 240 4% 46%;
+
+  --accent: 240 4% 95%;
+  --accent-foreground: 240 5% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
+
+  --radius: 0.75rem;
+}
+
 @theme {
-  --color-black: #000;
-  --color-dark: #000319;
+  /* =========================
+     CORE COLORS (mapped)
+  ========================= */
+  --color-black: var(--black);
+  --color-black-100: var(--black-100);
+  --color-black-200: var(--black-200);
+  --color-black-300: var(--black-300);
+
+  --color-white: var(--white);
+  --color-white-100: var(--white-100);
+  --color-white-200: var(--white-200);
+
+  --color-blue-100: var(--blue-100);
+  --color-purple: var(--purple);
+
+  /* =========================
+     SYSTEM COLORS (HSL based)
+  ========================= */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* =========================
+     BORDER RADIUS
+  ========================= */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* =========================
+   GLOBAL BASE STYLES
+========================= */
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* =========================
+   BORDER RADIUS
+========================= */
+.rounded-lg {
+  border-radius: var(--radius);
+}
+
+.rounded-md {
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-sm {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes moveHorizontal {
+  0% { transform: translateX(-50%) translateY(-10%); }
+  50% { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
+}
+
+@keyframes moveInCircle {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes moveVertical {
+  0% { transform: translateY(-50%); }
+  50% { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* =========================
+   ANIMATION UTILITIES
+========================= */
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.75s forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+.animate-first {
+  animation: moveVertical 30s ease infinite;
+}
+
+.animate-second {
+  animation: moveInCircle 20s reverse infinite;
+}
+
+.animate-third {
+  animation: moveInCircle 40s linear infinite;
+}
+
+.animate-fourth {
+  animation: moveHorizontal 40s ease infinite;
+}
+
+.animate-fifth {
+  animation: moveInCircle 20s ease infinite;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* =========================
+   GRID + DOT BACKGROUNDS
+========================= */
+
+/* Grid */
+.bg-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 .5H31.5V32' stroke='%23ccc' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Small Grid */
+.bg-grid-small {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 .5H31.5V32' stroke='%23ccc' fill='none'/%3E%3C/svg%3E");
+  background-size: 8px 8px;
+}
+
+/* Dot */
+.bg-dot {
+  background-image: radial-gradient(circle, #999 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* =========================
+   CONTAINER (OPTIONAL)
+========================= */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem;
+  max-width: 1400px;
 }

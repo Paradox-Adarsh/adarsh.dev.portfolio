@@ -6,7 +6,7 @@ import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 const Hero = () => {
   return (
-    <div className="relative flex min-h-screen w-full items-start justify-center pt-32 bg-black-100 overflow-hidden">
+    <div className="pb-20 pt-36">
       {/* Spotlights */}
       <div>
         <Spotlight
@@ -21,14 +21,17 @@ const Hero = () => {
       </div>
 
       {/* Grid Background — pinned to fill the single root div */}
+      <div className="absolute inset-0 bg-black/40 " />
+
       <div
         className={cn(
           "absolute inset-0",
           "[background-size:40px_40px]",
-          "[background-image:linear-gradient(to_right,rgba(228,228,231,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.15)_1px,transparent_1px)]"
+          "[background-image:linear-gradient(to_right,rgba(228,228,231,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.03)_1px,transparent_1px)]",
         )}
       />
 
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
       {/* Content */}
       <div className="relative z-10 text-center px-5">
         <h2 className="tracking-widest uppercase text-blue-100 text-xs mb-4">

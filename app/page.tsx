@@ -1,6 +1,6 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
+
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Image from "next/image";
 import { FaHouse } from "react-icons/fa6";
@@ -8,6 +8,9 @@ import { navItems } from "@/data";
 import Experience from "@/components/Experience";
 import Approach from "@/components/Apprach";
 import Footer from "@/components/Footer";
+import TechStack from "@/components/TechStack";
+import AddSkillModal from "@/components/modals/AddSkillModal";
+import RecentProjects from "@/components/RecentProjects";
 
 
 export default function Home() {
@@ -18,11 +21,13 @@ export default function Home() {
       <div className="max-w-7xl w-full ">
         <FloatingNav navItems={navItems} />
         <Hero />
+        <TechStack/>
         <Grid />
-        <RecentProjects />
+        <RecentProjects/>
         <Experience />
         {/* <Approach / > */}
         <Footer/>
+              <AddSkillModal />   
       </div>
     </main>
   );

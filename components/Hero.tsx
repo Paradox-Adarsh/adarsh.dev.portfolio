@@ -5,6 +5,9 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
+import LoginModal from "./modals/LoginModal";
+import { EncryptedText } from "./ui/encrypted-text";
+
 const Hero = () => {
   return (
     <div className="pb-20 pt-36">
@@ -38,19 +41,7 @@ const Hero = () => {
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
         <div className="flex justify-center items-center">
           {/* OUTER */}
-          <div className="p-[2px] rounded-2xl bg-gradient-to-r from-[#070943] to-[#02043A] border border-white/20 w-[300px] h-[300px] flex items-center justify-center">
-            {/* INNER */}
-            <div className="relative w-[250px] h-[250px] rounded-2xl  overflow-hidden">
-              <Image
-                src="/profile_picture.png"
-                alt="Adarsh"
-                fill
-                className="object-cover object-[50%_20%]"
-              />
-              {/* SCAN LINE */}
-              <div className="absolute inset-0 pointer-events-none scan-effect"></div>
-            </div>
-          </div>
+         <LoginModal />
         </div>
         <div className=" flex items-center relative z-10 text-center px-3">
 <div className="">
@@ -60,7 +51,7 @@ const Hero = () => {
 
           <TextGenerateEffect words="Architecting Scalable Microservices & Seamless Web Experiences" />
           <p className="text-center md:tracking-wider md:text-lg lg:text-2xl">
-            Hi, I&apos;m Adarsh, a Fullstack Java Developer
+            <EncryptedText text="Hi, I&apos;m Adarsh"/>, a Fullstack Java Developer
           </p>
 
           <a href="about">

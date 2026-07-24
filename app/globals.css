@@ -322,11 +322,18 @@ body {
   max-width: 1400px;
 }
 
+.skill-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 .scan-effect::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
+    left: 0;        /* ← add this */
+  top: 0;   
 
   background: linear-gradient(
     to bottom,
@@ -347,4 +354,9 @@ body {
   100% {
     transform: translateY(100%);
   }
+}
+
+@keyframes shimmer-rotate {
+  0%   { --shimmer-angle: 0deg; }
+  100% { --shimmer-angle: 360deg; }
 }

@@ -1,11 +1,24 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { Provider } from "react-redux";
+import { ThemeProvider } from "next-themes";
+import { store } from "../store/store"; // adjust path
 
-export function ThemeProvider({
+export function Providers({
   children,
-  ...props
-}: React.ComponentProps<typeof NextThemesProvider>) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <Provider store={store}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
+    </Provider>
+  );
 }

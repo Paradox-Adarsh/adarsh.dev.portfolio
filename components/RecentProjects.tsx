@@ -4,7 +4,7 @@ import { useGetProjectsQuery } from "@/store/features/portfolioApi";
 import ProjectCard from "./ui/ProjectCard";
 
 export default function RecentProjects(){
-    const {data:projects, isLoading, isError}=useGetProjectsQuery();
+    const {data:projects, isLoading, isError}=useGetProjectsQuery(undefined);
 
    
   if (isLoading) return (

@@ -25,7 +25,7 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 export default function TechStack() {
-  const { data: categories, isLoading, isError } = useGetSkillCategoriesGroupedQuery();
+  const { data: categories, isLoading, isError } = useGetSkillCategoriesGroupedQuery(undefined);
 
   if (isLoading) return (
     <div className="flex items-center justify-center h-[35rem]">

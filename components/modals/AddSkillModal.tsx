@@ -46,7 +46,7 @@ type Action=
     const isAuthenticated =useSelector(selectIsAuthenticated);
     const [state,dispatch]=useReducer(reducer,initialState);
 
-  const { data: categories } = useGetSkillCategoriesGroupedQuery();
+  const { data: categories } = useGetSkillCategoriesGroupedQuery(undefined);
     const [createSkill, { isLoading }] = useCreateSkillUnderCategoryMutation();
 if (!isAuthenticated) return null;
 

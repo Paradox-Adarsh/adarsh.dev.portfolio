@@ -257,7 +257,7 @@ export default function AboutHero() {
       <div className="flex items-center gap-3 mb-8">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent to-purple-500/30" />
         <span className="font-mono text-purple-400 text-xs tracking-[0.3em] uppercase">
-          // developer.profile
+          // profile
         </span>
         <div className="h-px flex-1 bg-gradient-to-l from-transparent to-purple-500/30" />
       </div>
@@ -304,7 +304,7 @@ export default function AboutHero() {
             {/* name */}
             <div>
               <div className="font-mono text-white/30 text-xs mb-1 tracking-widest">
-                PLAYER_NAME:
+                _NAME_:
               </div>
               <h1 className="text-3xl font-bold text-white tracking-tight">
                 {profile.name}

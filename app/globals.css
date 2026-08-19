@@ -380,3 +380,22 @@ body {
   0%   { --shimmer-angle: 0deg; }
   100% { --shimmer-angle: 360deg; }
 }
+
+
+@keyframes tgfx-generate {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tgfx-word {
+  opacity: 0;
+  animation-name: tgfx-generate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}

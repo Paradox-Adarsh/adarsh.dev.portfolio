@@ -18,35 +18,8 @@ export const stats = [
 ];
 
 export const experience = [
-  {
+   {
     id: 1,
-    role: "Freelance Frontend Developer",
-    company: "Self Employed",
-    duration: "2022 — present",
-    type: "Freelance",
-    description: "Built responsive Next.js websites for clients. Delivered production-ready frontends with modern UI frameworks and component libraries.",
-    tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-  },
-  {
-    id: 2,
-    role: "Java Software Developer",
-    company: "Taxosmart",
-    duration: "Jan 2024 — Feb 2025",
-    type: "Full Time · On-site · Mumbai",
-    description: "Joined Taxosmart as Java Developer. Built desktop applications and automation tools for internal legal and tax workflows. Worked on web scraping and Chrome Extension development.",
-    tech: ["Core Java", "Advanced Java", "Selenium", "Robot Class", "Chrome Extension", "Desktop App"],
-  },
-  {
-    id: 3,
-    role: "Full Stack Developer",
-    company: "Taxosmart",
-    duration: "Feb 2025 — Present",
-    type: "Full Time · On-site · Borivali",
-    description: "Elevated to Full Stack — architected Litigation Manager with Spring Boot backend, Spring Security JWT auth and React Redux frontend. Deployed on client servers.",
-    tech: ["Spring Boot", "Spring Security", "React", "Redux", "MySQL", "JWT", "Docker","RabbiMQ"],
-  },
-  {
-    id: 4,
     role: "Open Source & Cloud Deployment",
     company: "Taxosmart",
     duration: "2026 — Present",
@@ -54,15 +27,52 @@ export const experience = [
     description: "Contributed to open source projects via Docker during work at Taxosmart. Migrated and deployed production applications on Google Cloud Platform (GCP).",
     tech: ["GCP", "Docker", "Spring Boot", "GitHub Actions", "Linux"],
   },
+ 
+  {
+    id: 2,
+    role: "Full Stack Developer",
+    company: "Taxosmart",
+    duration: "Feb 2025 — Present",
+    type: "Full Time · On-site · Borivali",
+    description: "Elevated to Full Stack — architected the Litigation Manager with a Spring Boot backend, Spring Security JWT authentication, and React/Redux frontend, alongside projects including Smart Identifier. Deployed and maintained applications on client servers.",
+    tech: ["Spring Boot", "Spring Security", "React", "Redux", "MySQL", "JWT", "Docker","RabbiMQ"],
+  },
+  {
+    id: 3,
+    role: "Java Software Developer",
+    company: "Taxosmart",
+    duration: "Jan 2024 — Feb 2025",
+    type: "Full Time · On-site · Mumbai",
+    description: "Joined Taxosmart as Java Developer. Built desktop applications and automation tools for internal legal and tax workflows. Worked on web scraping and Chrome Extension development.",
+    tech: ["Core Java", "Advanced Java", "Selenium", "Robot Class", "Chrome Extension", "Desktop App"],
+  },
+ 
+   {
+    id: 4,
+    role: "Freelance Frontend Developer",
+    company: "Self Employed",
+    duration: "2022 — present",
+    type: "Freelance",
+    description: "Built responsive Next.js websites for clients. Delivered production-ready frontends with modern UI frameworks and component libraries.",
+    tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+  },
 ];
 
 export const education = [
   {
     id: 1,
+    degree: "Full Stack Java Development Course ",
+    institution: "Anudip Foundation",
+    description: "Comprehensive training in Java Full Stack Development, covering Core Java, Advanced Java, Spring Boot, REST APIs, SQL, and Angular.",
+    duration: "2023",
+    
+  },
+  {
+    id: 2,
     degree: "Bachelors in Information Technology",
     institution: "University of Mumbai",
     duration: "2019 — 2023",
-    grade: "8.2 CGPA",
+    grade: "8.6 CGPA",
   },
 ];
 

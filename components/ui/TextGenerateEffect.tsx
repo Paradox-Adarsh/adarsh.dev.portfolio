@@ -1,64 +1,38 @@
+// components/ui/TextGenerateEffect.tsx
 "use client";
-import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "motion/react";
-import { cn } from "@/lib/utils";
+
+import React from "react";
+import { cn } from "../../lib/utils";
+
+interface TextGenerateEffectProps {
+  words: string;
+  className?: string;
+  duration?: number;
+  staggerDelay?: number;
+}
 
 export const TextGenerateEffect = ({
   words,
   className,
-  filter = true,
-  duration = 0.5,
-}: {
-  words: string;
-  className?: string;
-  filter?: boolean;
-  duration?: number;
-}) => {
-  const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-        filter: filter ? "blur(0px)" : "none",
-      },
-      {
-        duration: duration ? duration : 1,
-        delay: stagger(0.2),
-      },
-    );
-  }, [scope.current]);
-
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${
-                idx > 3 ? "text-purple-500" : "text-black dark:text-white"
-              } opacity-0`}
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  duration = 0.4,
+  staggerDelay = 0.06,
+}: TextGenerateEffectProps) => {
+  const wordsArray = words.split(" ");
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
-          {renderWords()}
-        </div>
-      </div>
+    <div className={cn("font-bold text-white text-2xl leading-snug tracking-wide", className)}>
+      {wordsArray.map((word, idx) => (
+        <span
+          key={word + idx}
+          className="tgfx-word inline-block"
+          style={{
+            animationDelay: `${idx * staggerDelay}s`,
+            animationDuration: `${duration}s`,
+          }}
+        >
+          {word}&nbsp;
+        </span>
+      ))}
     </div>
   );
 };

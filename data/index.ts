@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I build scalable backend systems with Java and craft responsive frontend applications using React and Next.js.",
+    title: "I engineer scalable backend systems with Java and develop high-performance, responsive web applications using React and Next.js.",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "Ready For Global Collaboration",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -49,7 +49,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a MicroService Application",
+    title: "Experienced in designing and implementing Microservices-based applications",
     description: "Pulse AI",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: " h-full",

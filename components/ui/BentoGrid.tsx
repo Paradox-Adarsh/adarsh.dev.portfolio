@@ -130,14 +130,15 @@ export const BentoGridItem = ({
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
-          <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-          >
-            {title}
-          </div>
+          <div className="relative z-20 color-[#00BFFF] font-sans text-lg lg:text-3xl max-w-96 font-bold">
+    {title}
+  </div>
 
-          {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
+  {id === 2 && (
+    <div className="absolute inset-0 z-0">
+      <GridGlobe />
+    </div>
+  )}
 
           {/* Tech stack list div */}
          {id === 3 && <MatrixText />}

@@ -84,7 +84,7 @@ function AboutFooter() {
             ✉ Contact Me
           </a>
           
-           <a href="https://github.com/yourgithub"
+           <a href="https://github.com/Paradox-Adarsh"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl

@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import TechStack from "@/components/TechStack";
 import AddSkillModal from "@/components/modals/AddSkillModal";
 import RecentProjects from "@/components/RecentProjects";
+import Timeline from "@/components/about/Timeline";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
+         {/* <Timeline/> */}
         <TechStack/>
         <RecentProjects/>
         <Experience />
